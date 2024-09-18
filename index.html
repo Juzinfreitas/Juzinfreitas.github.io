@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escala de Manchester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escala de Manchester</h1>
+        <p>Preencha os dados abaixo para obter a avaliação:</p>
+        <br>
+
+        <form id="patientForm">
+            <label for="name">Nome Completo:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="weight">Peso (kg):</label><br>
+            <input type="number" id="weight" name="weight" required><br><br>
+
+            <label for="dob">Data de Nascimento:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label>Sintomas:</label><br>
+            <label><input type="checkbox" value="1" name="symptoms"> Dor intensa</label><br>
+            <label><input type="checkbox" value="2" name="symptoms"> Dificuldade para respirar</label><br>
+            <label><input type="checkbox" value="3" name="symptoms"> Sangramento</label><br>
+            <label><input type="checkbox" value="4" name="symptoms"> Febre alta</label><br>
+            <label><input type="checkbox" value="5" name="symptoms"> Tontura ou desmaio</label><br><br>
+
+            <label for="allergies">Alergias:</label><br>
+            <input type="text" id="allergies" name="allergies"><br><br>
+
+            <label for="history">Histórico familiar (doenças):</label><br>
+            <input type="text" id="history" name="history"><br><br>
+
+            <button type="button" onclick="evaluatePatient()">Avaliar</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
