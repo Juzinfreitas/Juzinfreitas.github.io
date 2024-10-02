@@ -1,10 +1,9 @@
+function goToForm() {
+    document.getElementById('welcomeScreen').style.display = 'none';
+    document.getElementById('formScreen').style.display = 'block';
+}
+
 function evaluatePatient() {
-    const name = document.getElementById('name').value;
-    const weight = document.getElementById('weight').value;
-    const dob = document.getElementById('dob').value;
-    const allergies = document.getElementById('allergies').value;
-    const history = document.getElementById('history').value;
-    
     const checkboxes = document.querySelectorAll('input[name="symptoms"]:checked');
     let totalPriority = 0;
 
@@ -12,10 +11,8 @@ function evaluatePatient() {
         totalPriority += parseInt(checkbox.value);
     });
 
-    const resultDiv = document.getElementById('result');
-    
-    let priorityColor;
     let priorityText;
+    let priorityColor;
 
     if (totalPriority <= 1) {
         priorityText = "Verde (Atendimento pode aguardar)";
@@ -31,13 +28,14 @@ function evaluatePatient() {
         priorityColor = "red";
     }
 
-    resultDiv.innerHTML = `
-        <h3>Resultado da Avaliação</h3>
-        <p><strong>Nome Completo:</strong> ${name}</p>
-        <p><strong>Peso:</strong> ${weight} kg</p>
-        <p><strong>Data de Nascimento:</strong> ${dob}</p>
-        <p><strong>Alergias:</strong> ${allergies}</p>
-        <p><strong>Histórico familiar:</strong> ${history}</p>
-        <p><strong>Resultado (cor):</strong> <span style="color:${priorityColor}">${priorityText}</span></p>
-    `;
+    const resultText = document.getElementById('resultText');
+    resultText.innerHTML = `A cor da pulseira é <span style="color:${priorityColor}">${priorityText}</span>`;
+    
+    const modal = document.getElementById('resultModal');
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    const modal = document.getElementById('resultModal');
+    modal.style.display = "none";
 }
