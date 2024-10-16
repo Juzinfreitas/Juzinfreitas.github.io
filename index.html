@@ -7,12 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho -->
+    <header>
+        <img src="images/logo cesuca.png" alt="Logo" class="logo">
+        <h2>Escala de Manchester - Sistema de Triagem</h2>
+    </header>
+
+    <!-- Tela de Boas-Vindas -->
     <div id="welcomeScreen" class="container">
         <h1>Bem-vindo ao Sistema de Triagem</h1>
         <p>Clique no botão abaixo para continuar com o processo de avaliação pela Escala de Manchester.</p>
         <button onclick="goToForm()">Iniciar Avaliação</button>
     </div>
 
+    <!-- Tela do Formulário -->
     <div id="formScreen" class="container" style="display:none;">
         <h1>Escala de Manchester</h1>
         <p>Preencha os dados abaixo para obter a avaliação:</p>
@@ -28,7 +36,7 @@
             <input type="date" id="dob" name="dob" required><br><br>
 
             <label>Sintomas:</label><br>
-            <label><input type="checkbox" value="1" name="symptoms"> Dor intensa no corpo</label><br>
+            <label><input type="checkbox" value="1" name="symptoms"> Dor intensa</label><br>
             <label><input type="checkbox" value="2" name="symptoms"> Dificuldade para respirar</label><br>
             <label><input type="checkbox" value="3" name="symptoms"> Sangramento</label><br>
             <label><input type="checkbox" value="4" name="symptoms"> Febre alta</label><br>
@@ -46,14 +54,19 @@
         </form>
     </div>
 
-    <!-- Modal -->
-    <div id="resultModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Resultado da Avaliação</h3>
-            <p id="resultText"></p>
-        </div>
+    <!-- Modal para exibir a cor da pulseira -->
+<div id="modalResultado" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Resultado: Sua pulseira é: <span id="corPulseira"></span></h2>
+      <div id="pulseiraVisual" style="width: 100px; height: 50px; margin: 20px auto;"></div>
     </div>
+</div>
+  
+    <!-- Rodapé -->
+    <footer>
+        <p>Desenvolvido por Juliano Silveira de Freitas, Pedro Henrique Schussler Meneguzzi, Carlos Eduardo Guedes Colombo, Iguaracy Ozorio Andrade da Silva, Lucas Paim Bitencourt</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
